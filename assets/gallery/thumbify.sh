@@ -1,1 +1,1 @@
-for f in ./*.jpg; do convert $f -resize "200x200^" thumbs/`basename ${f%.*}`-thumb.jpg; done
+for f in ./*.jpg; do convert $f -resize "350x350^" thumbs/`basename ${f%.*}`-thumb.jpg; done

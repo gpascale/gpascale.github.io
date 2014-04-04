@@ -17,30 +17,32 @@ this["Combinator"]["Templates"]["photos"] = function(data) {var __t, __p = '', _
 this["Combinator"]["Templates"]["video"] = function(data) {var __t, __p = '', __e = _.escape;__p += '<div class="video contentSection" style="display:none;">\n\t<iframe width="600" height="450" src="//www.youtube.com/embed/TTIjKjSsWFU" frameborder="0" allowfullscreen></iframe>\n    <iframe width="600" height="450" src="//www.youtube.com/embed/5_wqcNBCV5c" frameborder="0" allowfullscreen></iframe>\n</div>';return __p};
 })();
 (function() {
+
 (function() {
 
-/*
-	require.config({
-		paths: {
-			backbone: '../ext/js/backbon-min-1.0.0',
-			jquery: '../ext/js/jquery.min-1.10.2',
-			underscore: '../ext/js/underscore-min-1.5.1',
-			bootstrap: '../ext/bootstrap/js/bootstrap.min',
-			fancybox: '../ext/fancybox/source/jquery.fancybox.pack.js?v=2.1.5',
-			text: '../ext/js/text',
-			domReady: '../ext/js/domReady'
-		}
+	$(document).ready(function() {
+		setTimeout(function() {
+			backgroundImages = ['assets/photos/action.jpg', 'assets/photos/sitting.jpg', 'assets/photos/standing.jpg', 'assets/photos/tiered.jpg'];
+			$.backstretch(backgroundImages, {
+				fade: 500,
+				duration: 5000
+			});
+		}, 1000);
+
+		$(".fancybox").attr('rel', 'photos').fancybox();
 	});
-*/
-	var _dependenciesLoaded = false;
-	var _pageLoaded = false;
-/*
-	require(['domReady', 'jquery', 'underscore', 'text'], function(domReady) {
-		require(['fancybox'], function() {
-			domReady(go);
-		});
+
+	$('.project-item.gallery').click(function(e) {
+		debugger;
+		return true;
 	});
-*/
+
+})();
+
+/*
+
+(function() {
+
 	function buildTemplate(tab)
 	{
 		switch(tab) {
@@ -167,4 +169,5 @@ this["Combinator"]["Templates"]["video"] = function(data) {var __t, __p = '', __
 		})
 	}
 }());
-})();
+
+*/})();

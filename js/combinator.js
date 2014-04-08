@@ -22,7 +22,10 @@ this["Combinator"]["Templates"]["video"] = function(data) {var __t, __p = '', __
 
 	$(document).ready(function() {
 		setTimeout(function() {
-			backgroundImages = ['assets/photos/action.jpg', 'assets/photos/sitting.jpg', 'assets/photos/standing.jpg', 'assets/photos/tiered.jpg'];
+			var backgroundImages = ['assets/photos/action.jpg', 'assets/photos/sitting.jpg', 'assets/photos/standing.jpg', 'assets/photos/tiered.jpg'];
+			if ($(window).width() < 600) {
+				backgroundImages = ['assets/photos/action-small.jpg'];
+			}
 			$.backstretch(backgroundImages, {
 				fade: 500,
 				duration: 5000
@@ -33,7 +36,6 @@ this["Combinator"]["Templates"]["video"] = function(data) {var __t, __p = '', __
 	});
 
 	$('.project-item.gallery').click(function(e) {
-		debugger;
 		return true;
 	});
 
